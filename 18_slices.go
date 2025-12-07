@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+	"slices"
+)
+
+// Di Golang versi terbaru, terdapat fitur bernama Generic, fitur ini akan kita bahas khusus dikelas Golang Generic
+// Fitur Generic ini membuat kita bisa membuat parameter dengan tipe yang bisa berubah-ubah, tanpa harus menggunakan interface kosong / any
+// Salah satu package yang menggunakan fitur Generic ini adalah package slices
+// Package slices ini digunakan untuk memanipulasi data di slice
+// https://pkg.go.dev/slices
+
+func main() {
+
+	values := []int{100, 95, 80, 90}
+	fmt.Println(slices.Min(values))
+	fmt.Println(slices.Max(values))
+	fmt.Println("==============================")
+
+	names := []string{"John", "Ali", "Zee", "Paul", "George", "Ringo"}
+	fmt.Println(slices.Min(names))
+	fmt.Println(slices.Max(names))
+	fmt.Println(slices.Contains(names, "Eko"))
+	fmt.Println(slices.Contains(names, "Ali"))
+	fmt.Println(slices.Index(names, "Eko"))
+	fmt.Println(slices.Index(names, "Zee"))
+}
